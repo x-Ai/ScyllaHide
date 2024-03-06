@@ -724,19 +724,19 @@ LONG CALLBACK VMPSysenterHandler(EXCEPTION_POINTERS* info)
                 if (!IsBadReadPtr((void*)ExceptionAddr, 2))
                     if (*reinterpret_cast<USHORT*>(ExceptionAddr) == 0x340F) // sysenter
                     {
-                        //x32bit syscall_number windows 10 22H2 19045.3324 ~
+                        //x32bit syscall_number windows 7 Service Pack 1 Build 7601
                         enum SYSCALLNAME : ULONG {
-                            NTSETINFORMATIONPROCESS = 0x4F,
-                            NTQUERYINFORMATIONPROCESS = 0xB9,
-                            NTSETINFORMATIONTHREAD = 0x4D,
-                            NTOPENFILE = 0xF4,
-                            NTCREATESECTION = 0x163,
-                            NTMAPVIEWOFSECTION = 0x101,
-                            NTUNMAPVIEWOFSECTION = 0x14,
-                            NTCLOSE = 0x18E,
-                            NTPROTECTVIRTUALMEMORY = 0xCE,
-                            NTQUERYVIRTUALMEMORY = 0x97,
-                            NTQUERYSYSTEMINFORMATION = 0x9D
+                            NTSETINFORMATIONPROCESS = 0x14d,
+                            NTQUERYINFORMATIONPROCESS = 0xe9,
+                            NTSETINFORMATIONTHREAD = 0x14f,
+                            NTOPENFILE = 0xb3,
+                            NTCREATESECTION = 0x53,
+                            NTMAPVIEWOFSECTION = 0xa7,
+                            NTUNMAPVIEWOFSECTION = 0x181,
+                            NTCLOSE = 0x32,
+                            NTPROTECTVIRTUALMEMORY = 0xd7,
+                            NTQUERYVIRTUALMEMORY = 0x10b,
+                            NTQUERYSYSTEMINFORMATION = 0x105
                         };
 
 
